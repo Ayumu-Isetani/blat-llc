@@ -1,93 +1,199 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>合同会社ブラット</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        section {
-            padding: 50px;
-        }
-        section:first-of-type {
-            margin-top: 140px;
-        }
-        section:last-of-type {
-            margin-bottom: 60px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px 20px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        td:first-child {
-            text-align: center;
-        }    </style>
-</head>
-<body>
-    <header>
-        <h1>合同会社ブラット</h1>
-        <p>（企業のキャッチコピーや簡単な紹介をここに記載します）</p>
-    </header>
-    <section>
-        <h2>事業内容</h2>
-        <p>（事業の詳細をここに記載します）</p>
-    </section>
-    <section>
-        <h2>会社概要</h2>
-        <table>
-            <tr>
-                <td>会社名</td>
-                <td>合同会社ブラット</td>
-            </tr>
-            <tr>
-                <td>代表者</td>
-                <td>羽根　廣和</td>
-            </tr>
-            <tr>
-                <td>所在地</td>
-                <td>愛知県名古屋市熱田区伝馬2丁目6-3-201</td>
-            </tr>
-            <tr>
-                <td>設立</td>
-                <td>2025年</td>
-            </tr>
-        </table>
-    </section>
-    <footer>
-        <p>&copy; 2025 Blat LLC. All rights reserved.</p>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>合同会社ブラット</title>
+        <!-- SwiperのCSSを読み込む -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                overflow-x: hidden;
+            }
+            header {
+                background-color: #333;
+                color: white;
+                padding: 5px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+            footer {
+                background-color: #333;
+                color: white;
+                padding: 5px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+            section {
+                padding: 40px;
+            }
+            section:first-of-type {
+                margin-top: 108px;
+            }
+            section:last-of-type {
+                margin-bottom: 54px;
+            }
+            table {
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 10px 20px;
+                text-align: left;
+            }
+            th {
+                background-color: #f4f4f4;
+            }
+            td:first-child {
+                text-align: center;
+            }
+            /* 画像のスライド表示領域 */
+            .swiper-container {
+                width: 100%;
+                height: 648px; /* 高さを調整 */
+                margin: 0 auto; /* センター揃えにするためにマージンを自動設定 */
+                position: relative; /* ページネーション位置のために親要素にrelativeを指定 */
+            }
+            .swiper-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain; /* アスペクト比を保って縮小 */
+                object-position: center; /* 画像が中央に表示されるように調整 */
+            }
+            /* ページネーションを下部に配置 */
+            .swiper-pagination {
+                position: absolute; /* 絶対位置指定 */
+                bottom: 10px; /* 下から10pxの位置 */
+                left: 50%; /* 中央揃え */
+            }
+            /* ナビゲーションボタンのスタイル */
+            .swiper-button-next, .swiper-button-prev {
+                background-color: rgba(0, 0, 0, 0); /* 半透明の背景色 */
+                color: rgba(0, 0, 0, 0.2); /* ボタンの文字色 */
+                padding: 0px; /* ボタンのパディング */
+                width: 96px; /* ボタンの横幅 */
+                height: 100%; /* ボタンの高さ */
+                border-radius: 0%; /* 丸いボタン */
+            }
+            .swiper-button-next {
+                top: 0px;
+                right: 0%; /* 右側にボタン */
+            }
+            .swiper-button-prev {
+                top: 0px;
+                left: 0%; /* 左側にボタン */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>合同会社ブラット</h1>
+            <p>（キャッチコピーや簡単な紹介をここに記載）</p>
+        </header>
+        <section>
+            <h2>UFB DUAL</h2>
+            <p>
+                一般住宅向け
+                <!-- Swiperのスライダー領域 -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="img/ufbd_01.png"></div>
+                        <div class="swiper-slide"><img src="img/ufbd_02.png"></div>
+                        <div class="swiper-slide"><img src="img/ufbd_03.png"></div>
+                        <div class="swiper-slide"><img src="img/ufbd_04.png"></div>
+                    </div>
+                    <!-- ページネーション（ページ番号） -->
+                    <div class="swiper-pagination"></div>
+                    <!-- ナビゲーションボタン（前へ・次へ） -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <!-- SwiperのJSを読み込む -->
+                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                <script>
+                    var swiper = new Swiper('.swiper-container', {
+                        loop: true, // 無限ループ
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true, // クリック可能にする
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    });
+                </script>
+            </p>
+        </section>
+        <section>
+            <h2>UFB DUAL</h2>
+            <p>
+                歯科医院さま向け
+                <!-- Swiperのスライダー領域 -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="img/ufbd_d_01.png"></div>
+                        <div class="swiper-slide"><img src="img/ufbd_d_02.png"></div>
+                        <div class="swiper-slide"><img src="img/ufbd_d_03.png"></div>
+                        <div class="swiper-slide"><img src="img/ufbd_d_04.png"></div>
+                    </div>
+                    <!-- ページネーション（ページ番号） -->
+                    <div class="swiper-pagination"></div>
+                    <!-- ナビゲーションボタン（前へ・次へ） -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <!-- SwiperのJSを読み込む -->
+                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                <script>
+                    var swiper = new Swiper('.swiper-container', {
+                        loop: true, // 無限ループ
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true, // クリック可能にする
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    });
+                </script>
+            </p>
+        </section>
+        <section>
+            <h2>会社概要</h2>
+            <table>
+                <tr>
+                    <td>会社名</td>
+                    <td>合同会社ブラット</td>
+                </tr>
+                <tr>
+                    <td>代表者</td>
+                    <td>羽根　廣和</td>
+                </tr>
+                <tr>
+                    <td>所在地</td>
+                    <td>愛知県名古屋市熱田区伝馬2丁目6-3-201</td>
+                </tr>
+                <tr>
+                    <td>設立</td>
+                    <td>2025年</td>
+                </tr>
+            </table>
+        </section>
+        <footer>
+            <p>&copy; 2025 Blat LLC. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
